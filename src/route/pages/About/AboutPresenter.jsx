@@ -1,8 +1,10 @@
 import React from 'react'
+import AboutHeadline from './components/AboutHeadline'
 
-const AboutPresenter = () => {
+const AboutPresenter = ({info, handleInfo}) => {
+  
   return (
-    <div>AboutPresenter</div>
+    <div><AboutHeadline />{JSON.stringify(info)}</div>
   )
 }
 
