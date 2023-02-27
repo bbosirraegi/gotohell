@@ -7,24 +7,24 @@ import ControlPointIcon from '@mui/icons-material/ControlPoint';
 
 const Header = () => {
     return (
-        <div class="mainlayout-navi-box">
-            <h3 class="mainlayout-navi-title">
+        <div className="mainlayout-navi-box">
+            <h3 className="mainlayout-navi-title">
                 GoToHell
             </h3>
-            <div class="mainlayout-navi-linkbox">
-                <Link to="/" class="mainlayout-navi-link">
+            <div className="mainlayout-navi-linkbox">
+                <Link to="/" className="mainlayout-navi-link">
                     <HomeIcon />
                     홈
                 </Link>
-                <Link to="/about" class="mainlayout-navi-link">
+                <Link to="/about" className="mainlayout-navi-link">
                     <InsertCommentIcon />
                     토픽
                 </Link>
-                <Link to="/signin" class="mainlayout-navi-link">
+                <Link to="/signin" className="mainlayout-navi-link">
                     <NotificationsIcon />
                     알림
                 </Link>
-                <Link to="/signup" class="mainlayout-navi-link">
+                <Link to="/signup" className="mainlayout-navi-link">
                     <ControlPointIcon />
                     글쓰기
                 </Link>

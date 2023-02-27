@@ -1,20 +1,21 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Header from './Header'
-import '../../css/main.css'
+import BestTopic from '../BestTopic'
+import '../../css/mainlayout.css'
 
 
 const MainLayout = () => {
   return (
-    <div class="mainlayout">
-      <div class="mainlayout-navi">
+    <div className="mainlayout">
+      <div className="mainlayout-navi">
         <Header />
       </div>
-      <div class="mainlayout-main">
+      <div className="mainlayout-main">
         <Outlet />
       </div>
-      <div class="mainlayout-sub">
-        <p>SUB</p>
+      <div className="mainlayout-sub">
+        <BestTopic />
       </div>
     </div>
   )
