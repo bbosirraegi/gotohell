@@ -1,5 +1,118 @@
+.poppop {
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    padding-left: 10%;
+}
 
 .test {
     background-color: black;
     height: 100px;
+}
+
+.Topic_Main {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.attend {
+    width: 100%;
+    height: 100%;
+
+}
+
+.attend_img {
+    width: 100%;
+    height: 100%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+}
+
+.Search {
+    border: 1px solid rgba(128, 128, 128, .3);
+    border-radius: 10px;
+    display: flex;
+}
+
+.Search_Icon {
+    position: absolute;
+    padding: 0.6%;
+
+}
+
+.Search_Topic {
+    border: none;
+    background: transparent;
+    border-radius: 10px;
+    width: 100%;
+    height: 5vh;
+    text-indent: 2rem;
+}
+
+.Best_Topic_Top {
+    width: 100%;
+    padding-top: 10%;
+    padding-bottom: 5%;
+    display: flex;
+}
+
+.Best_Topic_Text {
+    font-weight: bold;
+
+}
+
+.Best_Topic_Link {
+    padding-left: 35%;
+}
+
+.Under_Line{
+    color: gray;
+    opacity: 0.3;
+}
+
+
+.Footerrrrrr {
+    position: absolute;
+    bottom: 0;
+}
+
+.CopyRight {
+    font-size: 0.1rem;
+    padding-right: 0.5vw;
+}
+
+details {
+    cursor: pointer;
+}
+
+details>span {
+    position: absolute;
+    font-size: 0.8rem;
+    color: gray;
+    opacity: 0.9;
+    line-height: 1.2rem;
+}
+
+details>summary {
+    font-size: 1rem;
+    font-weight: bold;
+    color: gray;
+    opacity: 0.9;
+}
+
+details>summary::-webkit-details-marker {
+    display: none;
+}
+
+details summary::-webkit-details-marker {
+    background: url("../img/expand_more_FILL0_wght400_GRAD0_opsz48.png") center center no-repeat/cover;
+}
+
+details[open] summary::-webkit-details-marker {
+    background: url("../img//expand_less_FILL0_wght400_GRAD0_opsz48.png") center center no-repeat/cover;
 }
