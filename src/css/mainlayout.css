@@ -6,6 +6,7 @@ html {
 
 body {
     font-family: "Noto Sans KR", sans-serif;
+    padding: 0 15%;
     height: 100%;
 }
 
@@ -36,7 +37,7 @@ a {
 }
 
 .mainlayout-main {
-    width: 40%;
+    width: 50%;
     height: 100%;
     border-right: 1px solid lightgray;
     display: flex;
@@ -45,7 +46,7 @@ a {
 }
 
 .mainlayout-sub {
-    width: 40%;
+    width: 30%;
     height: 100%;
     display: flex;
     justify-content: center;
