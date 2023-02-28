@@ -50,7 +50,7 @@ a {
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;;
+    align-items: center;
 }
 
 .mainlayout-navi-box {
@@ -69,10 +69,19 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    /* align-items: flex-end; */
+
+    align-items: flex-start;
+    padding-left: 30%;
+    position: relative
 }
 
 .mainlayout-navi-link {
     height: 15%;
+}
 
+.mainlayout-navi-text{
+    padding-left: 1vw;
+    position: relative;
+    bottom: 10%;
 }
