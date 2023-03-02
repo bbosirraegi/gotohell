@@ -4,7 +4,6 @@ import Header from './Header'
 import BestTopic from '../BestTopic'
 import '../../css/mainlayout.css'
 
-
 const MainLayout = () => {
   return (
     <div className="mainlayout">
