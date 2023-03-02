@@ -24,6 +24,8 @@ const BestTopicContainer = () => {
     console.log("ContentInfo : " + contentInfo.title);
   };
 
+  
+
   const testchange = (e) => {
     setContentInfo({ ...contentInfo, [e.target.name]: e.target.value });
     console.log("TITLE : " + contentInfo.title);
@@ -53,7 +55,6 @@ const BestTopicContainer = () => {
       testchange={testchange}
       topicList={topicList}
       searchText={searchText}
-      setSearchText={setSearchText}
       InsertText={InsertText}
       onSubmitSearch={onSubmitSearch}
     />
