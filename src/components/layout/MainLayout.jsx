@@ -9,12 +9,14 @@ const MainLayout = () => {
   return (
     <div className="mainlayout">
       <div className="mainlayout-navi">
+        {/* 컴포넌트 */}
         <Header />
       </div>
       <div className="mainlayout-main">
         <Outlet />
       </div>
       <div className="mainlayout-sub">
+        {/* 컴포넌트 */}
         <BestTopic />
       </div>
     </div>
