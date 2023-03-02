@@ -1,11 +1,33 @@
 import React, { useState } from 'react';
 import '../css/tag.css';
 
+
 const initial = [
   {
     id: 1,
     title: 'test1',
     content: '일본갓다왔음',
+    // 작성자 정보
+    tag: [
+      '오사카',
+      '도쿄',
+      '닌텐도',
+      '테스트1',
+      '테스트2',
+      '테스트3',
+      '테스트3',
+      '테스트3',
+      '테스트3',
+      '테스트3',
+      '테스트3',
+      '테스트3',
+      '테스트3테스트3테스트3테스트3',
+    ],
+  },  {
+    id: 1,
+    title: 'test1',
+    content: '일본갓다왔음',
+    // 작성자 정보
     tag: [
       '오사카',
       '도쿄',
@@ -48,3 +70,4 @@ const Tag = () => {
 };
 
 export default Tag;
+

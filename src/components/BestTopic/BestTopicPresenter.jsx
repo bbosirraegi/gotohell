@@ -1,33 +1,21 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import "../../css/besttopic.css";
+import { Link } from "react-router-dom";
+// IMAGE
 import attendimg from "../../img/attend.png";
 import BestTopicImg from "../../img/SingCong.png";
+// Icons
 import SearchIcon from "@mui/icons-material/Search";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { Link, useNavigate } from "react-router-dom";
 
 const BestTopicPresenter = (props) => {
-  const [searchText, setSearchText] = useState("");
-  const { testfunction, testchange } = props;
-  const navigate = useNavigate();
-
-  const InsertText = (e) => {
-    setSearchText(e.target.value);
-  };
-
-  const onReset = (e) => {
-    setSearchText("");
-  };
-
-  const onSubmitSearch = (e) => {
-    if (e.key === "Enter") {
-      onReset();
-      return navigate("/#");
-    }
-  };
+  const { topicList } = props;
+  const { searchText, setSearchText } = props;
+  const { InsertText } = props;
+  const { onSubmitSearch } = props;
 
   return (
     <div className="poppop">
@@ -59,46 +47,26 @@ const BestTopicPresenter = (props) => {
           </a>
         </div>
 
-        <div className="Best_Topic">
-          <div className="Best_Topic_Frame">
-            <div className="Best_Topic_Title">오늘 저녁은 뭐먹지?</div>
-            <div className="Best_Topic_PostText">
-              몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루
-              몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루
-              몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루
+        {topicList.map((item) => {
+          return (
+            <div className="Best_Topic">
+              <div className="Best_Topic_Frame">
+                <div className="Best_Topic_Title">
+                  <Link to="/">{item.title}</Link>
+                </div>
+                <div className="Best_Topic_PostText">
+                  <Link to="/">{item.contents}</Link>
+                </div>
+              </div>
+              <div className="Best_Topic_Img_Box">
+                <Link to="/">
+                  <img src={BestTopicImg} className="Best_Topic_Img" />
+                </Link>
+              </div>
             </div>
-          </div>
-          <img src={BestTopicImg} className="Best_Topic_Img" />
-        </div>
+          );
+        })}
 
-        <div className="Best_Topic">
-          <div className="Best_Topic_Frame">
-            <div className="Best_Topic_Title">오늘 저녁은 뭐먹지?</div>
-            <div className="Best_Topic_PostText">
-              몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루
-              몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루
-              몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루
-            </div>
-          </div>
-          <img src={BestTopicImg} className="Best_Topic_Img" />
-        </div>
-
-        <div className="Best_Topic_last">
-          <div className="Best_Topic_Frame">
-            <div className="Best_Topic_Title">오늘 저녁은 뭐먹지?</div>
-            <div className="Best_Topic_PostText">
-              몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루
-              몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루
-              몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루 몰?루
-            </div>
-          </div>
-          <img src={BestTopicImg} className="Best_Topic_Img" />
-        </div>
-
-        {/* <div className="test">
-          <button onClick={testfunction}>wow</button>
-          <input type="text" name="title" onChange={testchange} />
-        </div> */}
         <div className="Footerrrrrr">
           <span className="CopyRight">
             <Link to="/">개인정보처리 방침 </Link>
@@ -133,6 +101,7 @@ const BestTopicPresenter = (props) => {
               </span>
             </details>
           </div>
+
           <div className="SNS">
             <Link to="/" className="SNS_ICONS">
               <InstagramIcon />
@@ -152,5 +121,53 @@ const BestTopicPresenter = (props) => {
     </div>
   );
 };
-
+BestTopicPresenter.defaultProps = {
+  topicList: [
+    {
+      id: 0,
+      title: "할슈타트, 여름☀️ 혹은 겨울❄️",
+      contents: `할슈타트의 여름과 겨울, 
+      여러분은 언제가 더 맘에 드시나요? 😊
+      
+      할슈타트 🇦🇹 
+      개인적으로 유럽 여행하면서 가장 만족했던 곳이고
+      저의 최애 도시 중 하나입니다 :)
+      좋았던 기억을 되살려 겨울에도 다시 방문해봤는데요!!
+      
+      여름에는 싱그럽고 활기찬 분위기에 아름다운 자연의 모습을 만끽할 수 있었고,
+      겨울에는 조금 더 정적인 분위기의 겨울왕국(!?) 느낌! 조금 추웠지만 포근한 기분을 느낄 수 있었어요 ;)
+      `,
+    },
+    {
+      id: 1,
+      title: "할슈타트, 여름☀️ 혹은 겨울❄️",
+      contents: `할슈타트의 여름과 겨울, 
+      여러분은 언제가 더 맘에 드시나요? 😊
+      
+      할슈타트 🇦🇹 
+      개인적으로 유럽 여행하면서 가장 만족했던 곳이고
+      저의 최애 도시 중 하나입니다 :)
+      좋았던 기억을 되살려 겨울에도 다시 방문해봤는데요!!
+      
+      여름에는 싱그럽고 활기찬 분위기에 아름다운 자연의 모습을 만끽할 수 있었고,
+      겨울에는 조금 더 정적인 분위기의 겨울왕국(!?) 느낌! 조금 추웠지만 포근한 기분을 느낄 수 있었어요 ;)
+      `,
+    },
+    {
+      id: 2,
+      title: "할슈타트, 여름☀️ 혹은 겨울❄️",
+      contents: `할슈타트의 여름과 겨울, 
+      여러분은 언제가 더 맘에 드시나요? 😊
+      
+      할슈타트 🇦🇹 
+      개인적으로 유럽 여행하면서 가장 만족했던 곳이고
+      저의 최애 도시 중 하나입니다 :)
+      좋았던 기억을 되살려 겨울에도 다시 방문해봤는데요!!
+      
+      여름에는 싱그럽고 활기찬 분위기에 아름다운 자연의 모습을 만끽할 수 있었고,
+      겨울에는 조금 더 정적인 분위기의 겨울왕국(!?) 느낌! 조금 추웠지만 포근한 기분을 느낄 수 있었어요 ;)
+      `,
+    },
+  ],
+};
 export default BestTopicPresenter;
