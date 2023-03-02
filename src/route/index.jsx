@@ -1,7 +1,8 @@
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import { MainLayout } from "../components";
-import { About, Main } from "./pages";
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { MainLayout } from '../components';
+import { About, Main } from './pages';
+import Privacy from '../components/BestTopic/Copyright/Privacy';
 
 const IndexRouter = () => {
   return (

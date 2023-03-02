@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import InsertCommentIcon from "@mui/icons-material/InsertComment";
@@ -6,6 +6,9 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import ControlPointIcon from "@mui/icons-material/ControlPoint";
 
 const Header = () => {
+
+  const [ checkpage, setCheckpage ] = useState( 0 );
+
   return (
     <div className="mainlayout-navi-box">
       <h3 className="mainlayout-navi-title">
