@@ -87,7 +87,6 @@
     flex-direction: row;
     padding-top: 7%;
     padding-bottom: 6%;
-    border-bottom: 1px solid rgba(128, 128, 128, .3);
 }
 
 
@@ -158,12 +157,17 @@
 }
 
 
+
+
 details {
     cursor: pointer;
 
 }
 
-details>span {
+
+
+
+details>div {
     font-size: 0.8rem;
     color: gray;
     opacity: 0.9;
@@ -172,27 +176,26 @@ details>span {
 
 }
 
-details>summary {
+details summary {
     font-size: 1rem;
     font-weight: bold;
     color: gray;
     opacity: 0.9;
 }
 
-details>summary::-webkit-details-marker {
-    display: none;
+.ArrowDownIcon {
+    position: absolute;
 }
 
-
-details>summary::-webkit-details-marker {
-    /* background: url("../img/expand_more_FILL0_wght400_GRAD0_opsz48.png") center center no-repeat/cover; */
-    content: "+"
+.ArrowUpIcon {
+    position:absolute;
 }
 
-details[open]>summary::-webkit-details-marker {
-    /* background: url("../img//expand_less_FILL0_wght400_GRAD0_opsz48.png") center center no-repeat/cover; */
-    content: "-"
+details summary::marker {
+    font-size: 0;
+
 }
+
 
 .SNS {
     padding-top: 15%;
