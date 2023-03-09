@@ -10,13 +10,16 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import Arrow_Down from '@mui/icons-material/KeyboardArrowDownSharp';
+import Arrow_Up from '@mui/icons-material/KeyboardArrowUpSharp';
 
 const BestTopicPresenter = (props) => {
   const { topicList } = props;
   const { searchText } = props;
   const { InsertText } = props;
   const { onSubmitSearch } = props;
-  const { shuffle } = props;
+  const { toggleMenu } = props;
+  const { ArrowIcon} = props;
 
   return (
     <div className="poppop">
@@ -50,8 +53,9 @@ const BestTopicPresenter = (props) => {
 
         {topicList
           .sort(() => Math.random() - 0.5)
-          .slice(0,3)
+          .slice(0, 3)
           .map((item) => {
+
             return (
               <div className="Best_Topic" key={item.id}>
                 <div className="Best_Topic_Frame">
@@ -84,10 +88,20 @@ const BestTopicPresenter = (props) => {
           <span className="CopyRight">
             <Link to="/">서비스 정보 수신 동의 </Link>
           </span>
+
+          <div></div>
+
           <div className="GTH_Details">
-            <details style={{}}>
-              <summary>GTH</summary>
-              <span>
+            <details>
+              <summary>
+                <span onClick={() => toggleMenu}>GTH</span>
+                  {ArrowIcon ? (
+                    <Arrow_Up className="ArrowUpIcon" />
+                  ) : (
+                    <Arrow_Down className="ArrowDownIcon" />
+                  )}
+              </summary>
+              <div>
                 <br />
                 이메일 : 몰라
                 <br />
@@ -102,7 +116,7 @@ const BestTopicPresenter = (props) => {
                 주소 : 부산광역시 금정구 부산대학로63번길 2
                 <br />
                 통신판매업번호 : 없음
-              </span>
+              </div>
             </details>
           </div>
 
