@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../css/tag.css';
 
-
 const initial = [
   {
     id: 1,
@@ -23,9 +22,10 @@ const initial = [
       '테스트3',
       '테스트3테스트3테스트3테스트3',
     ],
-  },  {
-    id: 1,
-    title: 'test1',
+  },
+  {
+    id: 2,
+    title: 'test2',
     content: '일본갓다왔음',
     // 작성자 정보
     tag: [
@@ -46,20 +46,14 @@ const initial = [
   },
 ];
 
-const Tag = () => {
+const Tag = ({ style }) => {
   const [testtag, setTesttag] = useState(initial);
-
-  console.log('TESTTAG');
-  console.log(testtag);
-
-  console.log('TESTTAG.TAG');
-  console.log(testtag.tag);
 
   const test = testtag.tag;
 
   // 이게 맞나?
   return (
-    <div className="component-tag-container">
+    <div className="component-tag-container" style={style}>
       <div className="component-tag-tagbox">
         {testtag.map((key) =>
           key.tag.map((test) => <p className="component-tag-tag"># {test}</p>)
@@ -70,4 +64,3 @@ const Tag = () => {
 };
 
 export default Tag;
-

@@ -1,7 +1,23 @@
 
 .main-page-container {
     width: 100%;
-    height: 100%;
+    height: 90%;
     margin: 0 40px;
     border: 1px solid black;
 }
+
+.main-page-contentbox {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    border: 1px solid #e5e7eb;
+    border-radius: 16px;
+    padding: 2% 0;
+}
+
+.main-page-contenbox-content {
+    border: 1px solid red;
+    padding: 2%;
+}
+

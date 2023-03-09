@@ -1,8 +1,8 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Header from './Header'
-import BestTopic from '../BestTopic'
-import '../../css/mainlayout.css'
+import React from 'react';
+import { Outlet } from 'react-router-dom';
+import Header from './Header';
+import BestTopic from '../BestTopic';
+import '../../css/mainlayout.css';
 
 const MainLayout = () => {
   return (
@@ -12,6 +12,9 @@ const MainLayout = () => {
         <Header />
       </div>
       <div className="mainlayout-main">
+        <div className="mainlayout-main-titlebox">
+          <p className="">커뮤니티</p>
+        </div>
         <Outlet />
       </div>
       <div className="mainlayout-sub">
@@ -19,7 +22,7 @@ const MainLayout = () => {
         <BestTopic />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default MainLayout
+export default MainLayout;
