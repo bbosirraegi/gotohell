@@ -45,7 +45,7 @@ const BestTopicContainer = () => {
     }
   };
   
-  const toggleMenu = () =>{
+  const toggleMenu = (e) =>{
     setArrowIcon(!ArrowIcon)
   }
 

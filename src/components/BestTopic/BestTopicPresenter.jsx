@@ -94,7 +94,7 @@ const BestTopicPresenter = (props) => {
           <div className="GTH_Details">
             <details>
               <summary>
-                <span onClick={() => toggleMenu}>GTH</span>
+                <span onClick={(toggleMenu)}>GTH</span>
                   {ArrowIcon ? (
                     <Arrow_Up className="ArrowUpIcon" />
                   ) : (
