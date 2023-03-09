@@ -88,8 +88,8 @@ const BestTopicPresenter = (props) => {
           <span className="CopyRight">
             <Link to="/">서비스 정보 수신 동의 </Link>
           </span>
+          </div>
 
-          <div></div>
 
           <div className="GTH_Details">
             <details>
@@ -134,7 +134,6 @@ const BestTopicPresenter = (props) => {
               <GitHubIcon />
             </Link>
           </div>
-        </div>
       </div>
     </div>
   );
