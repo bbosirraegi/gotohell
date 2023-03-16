@@ -88,13 +88,13 @@ const BestTopicPresenter = (props) => {
           <span className="CopyRight">
             <Link to="/">서비스 정보 수신 동의 </Link>
           </span>
-          </div>
 
+          <div></div>
 
           <div className="GTH_Details">
             <details>
               <summary>
-                <span onClick={(toggleMenu)}>GTH</span>
+                <span onClick={toggleMenu}>GTH</span>
                   {ArrowIcon ? (
                     <Arrow_Up className="ArrowUpIcon" />
                   ) : (
@@ -121,19 +121,20 @@ const BestTopicPresenter = (props) => {
           </div>
 
           <div className="SNS">
-            <Link to="/" className="SNS_ICONS">
+            <Link to="https://instagram.com" target={"_blank"} className="SNS_ICONS">
               <InstagramIcon />
             </Link>
-            <Link to="/" className="SNS_ICONS">
+            <Link to="https://facebook.com" target={"_blank"} className="SNS_ICONS">
               <FacebookIcon />
             </Link>
-            <Link to="/" className="SNS_ICONS">
+            <Link to="https://youtube.com" target={"_blank"} className="SNS_ICONS">
               <YouTubeIcon />
             </Link>
-            <Link to="/" className="SNS_ICONS">
+            <Link to="https://github.com/bbosirraegi" target={"_blank"} className="SNS_ICONS">
               <GitHubIcon />
             </Link>
           </div>
+        </div>
       </div>
     </div>
   );
