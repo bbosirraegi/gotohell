@@ -4,11 +4,21 @@ html {
     height: 100%;
 }
 
+html::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     font-family: "Noto Sans KR", sans-serif;
     padding: 0 15%;
     height: 100%;
     margin: 0 8px;
+    display: flex;
+    justify-content: center;
+}
+
+h3 {
+    margin: 0
 }
 
 a {
@@ -21,8 +31,8 @@ a {
 }
 
 .mainlayout {
-    width: 100%;
-    height: 98%;
+    width: 1220px;
+    height: 100%;
     background-color: white;
     display: flex;
     align-items: center;
@@ -31,15 +41,14 @@ a {
 }
 
 .mainlayout-navi {
-    width: 10%;
+    width: 160px;
     height: 100%;
     border-right: 1px solid lightgray;
     text-align: center;
 }
 
 .mainlayout-main {
-    width: 60%;
-    min-width: 800px;
+    width: 680px;
     height: 100%;
     border-right: 1px solid lightgray;
     display: flex;
@@ -61,7 +70,7 @@ a {
 }
 
 .mainlayout-sub {
-    width: 30%;
+    width: 340px;
     height: 100%;
     display: flex;
     justify-content: center;
