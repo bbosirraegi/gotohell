@@ -1,24 +1,34 @@
 import React from 'react';
+import MyLocationIcon from '@mui/icons-material/MyLocation';
 import '../css/profile.css';
 
 const Profile = (props) => {
   const { info } = props;
 
   return (
-    <div className="profile-page-container">
-      <div className="profile-page-imgbox">
-        <img src={info.img} className="profile-page-img" />
+    <div className="profile-component-container">
+      <div className="profile-component-box profile-component-box-imgbox">
+        <img
+          className="profile-component-box-imgbox-img"
+          src={info.img}
+          alt="img"
+        />
       </div>
-
-      <div className="profile-page-inforbox">
-        <p className="profile-page-name">{info.name}</p>
-        <div className="profile-page-placebox">
-          <p className="profile-page-location">{info.location}</p>
-          <p className="profile-page-date">{info.date}</p>
+      <div className="profile-component-box profile-component-box-namebox">
+        <p className="profile-component-box-namebox-name">{info.writer}</p>
+        <div className="profile-component-box-namebox-namebox">
+          <p className="profile-component-box-namebox-namebox-location">
+            <MyLocationIcon />
+            {info.location}
+          </p>
+          <p className="profile-component-box-namebox-namebox-time">
+            {info.date}
+          </p>
         </div>
       </div>
-
-      <div className="profile-page-morebox">...</div>
+      <div className="profile-component-box profile-component-box-infobox">
+        <p>...</p>
+      </div>
     </div>
   );
 };

@@ -4,10 +4,21 @@ html {
     height: 100%;
 }
 
+html::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     font-family: "Noto Sans KR", sans-serif;
     padding: 0 15%;
     height: 100%;
+    margin: 0 8px;
+    display: flex;
+    justify-content: center;
+}
+
+h3 {
+    margin: 0
 }
 
 a {
@@ -20,7 +31,7 @@ a {
 }
 
 .mainlayout {
-    width: 100%;
+    width: 1220px;
     height: 100%;
     background-color: white;
     display: flex;
@@ -30,23 +41,36 @@ a {
 }
 
 .mainlayout-navi {
-    width: 10%;
+    width: 160px;
     height: 100%;
     border-right: 1px solid lightgray;
     text-align: center;
 }
 
 .mainlayout-main {
-    width: 60%;
+    width: 680px;
     height: 100%;
     border-right: 1px solid lightgray;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0 60px;
+}
+
+.mainlayout-main-titlebox {
+    display: flex;
+    width: 100%;
+    height: 5%;
+    align-items: center;
+    font-size: 32px;
+    font-weight: 700;
+    background-color: white;
+    padding: 30px 0;
 }
 
 .mainlayout-sub {
-    width: 30%;
+    width: 340px;
     height: 100%;
     display: flex;
     justify-content: center;
