@@ -2,10 +2,13 @@ import React from 'react';
 
 import Tag from 'components/Tag';
 import { AiOutlineHeart } from 'react-icons/ai';
+import { BiMessageRounded } from 'react-icons/bi';
+import { RiBookmarkLine } from 'react-icons/ri';
+import { BsShare } from 'react-icons/bs';
 import 'css/main.css';
 
 const Maincontent = (props) => {
-  const { title, content, contentimg } = props;
+  const { title, content, contentimg, heartCount, commentCount } = props.info;
 
   const length = contentimg.length;
 
@@ -84,15 +87,30 @@ const Maincontent = (props) => {
       )}
 
       {/* 피드백 */}
-      {contentimg.length > 3 ? (
-        <div className="main-page-contentbox-feedbackbox-over">
-          <AiOutlineHeart /> Feed Back Is Here!
+      <div
+        className={
+          contentimg.length > 3
+            ? 'main-page-contentbox-feedbackbox-over'
+            : 'main-page-contentbox-feedbackbox-under'
+        }
+      >
+        <div className="main-page-contentbox-feedbackbox-leftbox">
+          <div className="cursor">
+            <AiOutlineHeart className="main-page-contentbox-feedback-leftbox-icons" />
+            <span>{heartCount}</span>
+          </div>
+          <div className="main-page-contentbox-feedback-leftbox-commentbox cursor">
+            <BiMessageRounded className="main-page-contentbox-feedback-leftbox-icons" />
+            <span>{commentCount}</span>
+          </div>
         </div>
-      ) : (
-        <div className="main-page-contentbox-feedbackbox-under">
-          <AiOutlineHeart /> Feed Back Is Here!
+        <div className="main-page-contentbox-feedbackbox-rightbox">
+          <div className="cursor">
+            <RiBookmarkLine />
+            <BsShare className="main-page-contentbox-feedbackbox-last" />
+          </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };
