@@ -33,7 +33,9 @@ const Tag = ({ style }) => {
     <div className="component-tag-container" style={style}>
       <div className="component-tag-tagbox">
         {test.map((key) => (
-          <p className="component-tag-tag"># {key}</p>
+          <p key={key} className="component-tag-tag">
+            # {key}
+          </p>
         ))}
       </div>
     </div>

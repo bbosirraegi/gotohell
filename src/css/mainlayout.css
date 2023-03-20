@@ -38,6 +38,7 @@ a {
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    padding-bottom: 55px;
 }
 
 .mainlayout-navi {
@@ -50,6 +51,7 @@ a {
 .mainlayout-main {
     width: 680px;
     height: 100%;
+    min-height: 100%;
     border-right: 1px solid lightgray;
     display: flex;
     flex-direction: column;
