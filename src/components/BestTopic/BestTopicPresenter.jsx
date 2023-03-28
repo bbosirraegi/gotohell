@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../../css/besttopic.css";
 // IMAGE
 import attendimg from "../../img/attend.png";
@@ -10,8 +10,8 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import YouTubeIcon from "@mui/icons-material/YouTube";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import Arrow_Down from '@mui/icons-material/KeyboardArrowDownSharp';
-import Arrow_Up from '@mui/icons-material/KeyboardArrowUpSharp';
+import Arrow_Down from "@mui/icons-material/KeyboardArrowDownSharp";
+import Arrow_Up from "@mui/icons-material/KeyboardArrowUpSharp";
 
 const BestTopicPresenter = (props) => {
   const { topicList } = props;
@@ -19,7 +19,10 @@ const BestTopicPresenter = (props) => {
   const { InsertText } = props;
   const { onSubmitSearch } = props;
   const { toggleMenu } = props;
-  const { ArrowIcon} = props;
+  const { ArrowIcon } = props;
+  const { navigateToInformation } = props;
+  const { navigateToTerms } = props;
+  const { navigateToPrivacy } = props;
 
   return (
     <div className="poppop">
@@ -55,7 +58,6 @@ const BestTopicPresenter = (props) => {
           .sort(() => Math.random() - 0.5)
           .slice(0, 3)
           .map((item) => {
-
             return (
               <div className="Best_Topic" key={item.id}>
                 <div className="Best_Topic_Frame">
@@ -76,30 +78,33 @@ const BestTopicPresenter = (props) => {
           })}
 
         <div className="Footerrrrrr">
-          <span className="CopyRight">
-            <Link to="/">개인정보처리 방침 </Link>
-          </span>
-          <span className="CopyRight">|</span>
-          <span className="CopyRight">
-            <Link to="/">이용약관</Link>
-          </span>
-          <span className="CopyRight">|</span>
+          <div className="CopyRight">
+            <div className="CopyRight_List" onClick={() => navigateToPrivacy()}>
+              개인정보처리 방침
+            </div>
+            <div className="CopyRight_List">|</div>
+            <div className="CopyRight_List" onClick={() => navigateToTerms()}>
+              이용약관
+            </div>
+            <div className="CopyRight_List">|</div>
 
-          <span className="CopyRight">
-            <Link to="/">서비스 정보 수신 동의 </Link>
-          </span>
-
-          <div></div>
+            <div
+              className="CopyRight_List"
+              onClick={() => navigateToInformation()}
+            >
+              서비스 정보 수신 동의
+            </div>
+          </div>
 
           <div className="GTH_Details">
             <details>
               <summary>
                 <span onClick={toggleMenu}>GTH</span>
-                  {ArrowIcon ? (
-                    <Arrow_Up className="ArrowUpIcon" />
-                  ) : (
-                    <Arrow_Down className="ArrowDownIcon" />
-                  )}
+                {ArrowIcon ? (
+                  <Arrow_Up className="ArrowUpIcon" />
+                ) : (
+                  <Arrow_Down className="ArrowDownIcon" />
+                )}
               </summary>
               <div>
                 <br />
@@ -121,16 +126,32 @@ const BestTopicPresenter = (props) => {
           </div>
 
           <div className="SNS">
-            <Link to="https://instagram.com" target={"_blank"} className="SNS_ICONS">
+            <Link
+              to="https://instagram.com"
+              target={"_blank"}
+              className="SNS_ICONS"
+            >
               <InstagramIcon />
             </Link>
-            <Link to="https://facebook.com" target={"_blank"} className="SNS_ICONS">
+            <Link
+              to="https://facebook.com"
+              target={"_blank"}
+              className="SNS_ICONS"
+            >
               <FacebookIcon />
             </Link>
-            <Link to="https://youtube.com" target={"_blank"} className="SNS_ICONS">
+            <Link
+              to="https://youtube.com"
+              target={"_blank"}
+              className="SNS_ICONS"
+            >
               <YouTubeIcon />
             </Link>
-            <Link to="https://github.com/bbosirraegi" target={"_blank"} className="SNS_ICONS">
+            <Link
+              to="https://github.com/bbosirraegi"
+              target={"_blank"}
+              className="SNS_ICONS"
+            >
               <GitHubIcon />
             </Link>
           </div>

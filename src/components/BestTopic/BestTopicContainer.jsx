@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import BestTopicPresenter from "./BestTopicPresenter";
 
 const BestTopicContainer = () => {
@@ -15,6 +16,8 @@ const BestTopicContainer = () => {
   const [topicList, setTopicList] = useState();
   const [searchText, setSearchText] = useState("");
   const [ArrowIcon, setArrowIcon] = useState(false)
+  const navigate = useNavigate();
+
 
   /* Functions */
   const testfuncion = () => {
@@ -49,6 +52,18 @@ const BestTopicContainer = () => {
     setArrowIcon(!ArrowIcon)
   }
 
+  const navigateToPrivacy =  () =>{
+    navigate("/Privacy_Page")
+  }
+  const navigateToTerms =  () =>{
+    navigate("/Terms_Page")
+  }
+  const navigateToInformation =  () =>{
+    navigate("/Service_Information")
+  }
+
+  
+  
   
   /* Hooks */
 
@@ -64,6 +79,9 @@ const BestTopicContainer = () => {
       onSubmitSearch={onSubmitSearch}
       toggleMenu={toggleMenu}
       ArrowIcon={ArrowIcon}
+      navigateToPrivacy = {navigateToPrivacy}
+      navigateToTerms={navigateToTerms}
+      navigateToInformation={navigateToInformation}
     />
   );
 };
