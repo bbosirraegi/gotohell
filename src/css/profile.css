@@ -1,64 +1,79 @@
 
-.profile-page-container {
-    width: 100%;
-    height: 90px;
+.profile-component-container {
+    width: auto;
+    height: 70px;
+    padding: 0 20px;
+    margin-bottom: 16px;
     display: flex;
-    flex-direction: row;
-}
-
-.profile-page-imgbox {
-    display: flex;
-    width: 20%;
-    height: 100%;
     justify-content: center;
     align-items: center;
 }
 
-.profile-page-img {
-    width: 60%;
-    height: 70%;
-    border: 1px solid rgba(255, 255, 255, 0);
-    border-radius: 40px;
-
+.profile-component-box {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.profile-page-inforbox {
-    width: 60%;
+.profile-component-box-imgbox {
+    display: flex;
+    width: 46px;
+    min-width: 46px;
+    height: 46px;
+}
+
+.profile-component-box-imgbox-img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid white;
+    border-radius: 100%;
+}
+
+.profile-component-box-namebox {
     display: flex;
     flex-direction: column;
+    width: 75%;
+    height: 100%;
+    margin-left: 16px;
 }
 
-.profile-page-name {
+.profile-component-box-namebox-name {
     display: flex;
     width: 100%;
-    align-items: flex-end;
-    height: 60%;
+    height: 48%;
+    align-items: end;
 }
 
-.profile-page-placebox {
+.profile-component-box-namebox-namebox {
+    display: flex;
     width: 100%;
-    height: 50%;
-    display: flex;
-    flex-direction: row;
-}
-
-.profile-page-location {
-    width: auto;
-    color: blue;
-    font-size: 0.8rem;
-    margin-right: 10px;
-}
-
-.profile-page-date {
-    width: auto;
-    color: rgb(155, 154, 154);
-    font-weight: 300;
-    font-size: 0.8rem;
-}
-
-.profile-page-morebox {
-    display: flex;
-    width: 20%;
+    height: 48%;
+    padding-top: 2%;
     align-items: center;
-    justify-content: center;
+    font-size: 14px;
+    font-weight: 300
+}
+
+.profile-component-box-namebox-namebox-location {
+    display: flex;
+    width: auto;
+    height: 100%;
+    padding-right: 5%;
+    align-items: flex-start;
+    color: #0060ff;
+}
+
+.profile-component-box-namebox-namebox-time {
+    display: flex;
+    width: auto;
+    height: 100%;
+    align-items: flex-start;
+    color: #93999f;
+}
+
+.profile-component-box-infobox {
+    display: flex;
+    width: 15%;
+    height: 100%;
 }
