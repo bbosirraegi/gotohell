@@ -15,14 +15,14 @@ import { useNavigate } from "react-router-dom";
 export const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
-  const handleEnter = (e) =>{
-    if (e.key === "Enter"){
-      handleSubmit();
-    }
-  }
-
   const auth = getAuth();
+  const navigate = useNavigate();
+  const handleEnter = (e) => {
+    if (e.key === "Enter") {
+      signIn();
+    }
+  };
+
   const signUp = async () => {
     try {
       await createUserWithEmailAndPassword(authService, email, password).then(
@@ -41,6 +41,7 @@ export const LoginPage = () => {
       await signInWithEmailAndPassword(auth, email, password).then(
         (userCredential) => {
           const user = userCredential.user;
+          console.log(auth)
           navigate("/");
           return user;
         }
@@ -65,10 +66,7 @@ export const LoginPage = () => {
     }
   };
 
-
-
   return (
-    
     <div className="login_main">
       <div>
         <h1>GoToHell</h1>

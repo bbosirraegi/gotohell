@@ -13,21 +13,18 @@ import AccountCircleSharpIcon from "@mui/icons-material/AccountCircleSharp";
 const Header = () => {
   const [checkpage, setCheckpage] = useState(0);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const auth = getAuth();
   const user = authService.currentUser;
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const logout = async () => {
     try {
       await signOut(authService);
-      setIsLoggedIn(false)
-      navigate("/")
+      setIsLoggedIn(false);
+      navigate("/");
     } catch (err) {
       console.error(err);
     }
   };
-
-
 
   useEffect(() => {
     if (user != null) {
@@ -77,14 +74,22 @@ const Header = () => {
       <>
         <div>
           {isLoggedIn === true ? (
-            <>
-            <div className="mainlayout-navi-profile"> 
-              {user.email.slice(0,3)}
-            </div>
-            <div onClick={()=>logout()}> 
-              LogOut
-            </div>
-            </>
+            user.photoURL !== null ? (
+              <>
+                <div className="mainlayout-navi-profile">
+                  <img
+                    className="mainlayout-navi-profile-icon"
+                    src={user.photoURL}
+                  />
+                </div>
+                <div onClick={() => logout()}>LogOut</div>
+              </>
+            ) : (
+              <>
+                {user.email.slice(0, 3)}
+                <div onClick={() => logout()}>LogOut</div>
+              </>
+            )
           ) : (
             <div className="mainlayout-navi-login">
               <div className="mainlayout-navi-profile">
