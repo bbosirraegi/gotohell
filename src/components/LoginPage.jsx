@@ -1,101 +1,96 @@
-import React, { useEffect, useState } from "react";
-import { Auth } from "./auth";
-import { db } from "config/firebase";
+import { useState } from "react";
+import { auth, googleProvider } from "../config/firebase";
 import {
-  getDocs,
-  collection,
-  addDoc,
-  deleteDoc,
-  doc,
-} from "firebase/firestore";
+  createUserWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+} from "firebase/auth";
+import "../css/loginpage.css";
 
-function LoginPage() {
-  const [movieList, setMovieList] = useState([]);
+export const LoginPage = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  // New Movie states
-  const [newMoviceTitle, setNewMoviceTitle] = useState("");
-  const [newReleaseDate, setNewReleaseDate] = useState("");
-  const [isNewMovieOscar, setIsNewMovieOscar] = useState(true);
-
-  // Update Title State
-  const [updatedTitle, setUpdatedTitle] = useState("");
-
-  const movieCollectionRef = collection(db, "movies");
-
-  const getMovieList = async () => {
-    //READ THE DATA
-    // SET THE POST LIST
+  const signIn = async () => {
     try {
-      const data = await getDocs(movieCollectionRef);
-      const filteredData = data.docs.map((doc) => ({
-        ...doc.data(),
-        id: doc.id,
-      }));
-      setMovieList(filteredData);
-    } catch (err) {
-      console.error(err);
-    }
-  };
-  useEffect(() => {
-    getMovieList();
-  }, []);
-
-  const onSubmitMovie = async () => {
-    try {
-      await addDoc(movieCollectionRef, {
-        title: newMoviceTitle,
-        releaseDate: newReleaseDate,
-        receivceAnOscar: isNewMovieOscar,
-      });
-      getMovieList();
+      await createUserWithEmailAndPassword(auth, email, password);
     } catch (err) {
       console.error(err);
     }
   };
 
-  const deleteMovie = async (id) => {
-    const movieDoc = doc(db, "movies", id);
-    await deleteDoc(movieDoc);
-    getMovieList()
+  const signInwithGoogle = async () => {
+    try {
+      await signInWithPopup(auth, googleProvider);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const logout = async () => {
+    try {
+      await signOut(auth);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
-    <div>
-      <Auth />
-{/* 
+    <div className="login_main">
       <div>
-        <input
-          placeholder="movie title..."
-          onChange={(e) => setNewMoviceTitle(e.target.value)}
-        />
-        <input
-          placeholder="Release Date..."
-          type="number"
-          onChange={(e) => setNewReleaseDate(e.target.value)}
-        />
-        <input
-          type="checkbox"
-          checked={isNewMovieOscar}
-          onChange={(e) => setIsNewMovieOscar(e.target.checked)}
-        />
-        <label>Received an Oscar</label>
-        <button onClick={onSubmitMovie}>Submit Post</button>
+        <h1>GoToHell</h1>
       </div>
 
-      <div>
-        {movieList.map((movie) => (
-          <div>
-            <h1 style={{ color: movie.receivceAOscar ? "green" : "red" }}>
-              {movie.title}
-            </h1>
-            <p>Date: {movie.releaseDate}</p>
+      <div className="login_div">
+        <div className="login_text1">
+          Are you traveler? <br />
+          We are traveler!
+        </div>
+      </div>
+      <div className="login_div">
+        <span className="login_text2_1">구글</span>
+        <span className="login_text2_2">로 1초만에 로그인 해보세요</span>
+      </div>
+      <div className="login_div">
+        <button className="google_button" onClick={signInwithGoogle}>
+          구글로 계속하기
+        </button>
+      </div>
 
-            <button onClick={() => deleteMovie(movie.id)}>Delete Movie</button>
-          </div>
-        ))}
-      </div> */}
+      <div className="text3">또는</div>
+
+      <div className="login_from">
+        <div>
+          <div className="text4">이메일</div>
+          <input
+            className="email_box"
+            type="text"
+            placeholder="EMAIL"
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+
+        <div>
+          <div className="text4">비밀번호</div>
+          <input
+            className="password_box"
+            type="password"
+            placeholder="비밀번호"
+            onChange={(e) => setPassword(e.target.value)}
+          />
+        </div>
+
+        <div className="submit_div">
+          <button className="submit_button" onClick={signIn}>
+            확인
+          </button>
+        </div>
+
+        <div className="login_div">
+        </div>
+      </div>
     </div>
   );
-}
+};
 
 export default LoginPage;
