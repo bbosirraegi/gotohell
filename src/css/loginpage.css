@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-top: 10%;
+    padding-top: 30%;
     width: 100%;
 }
 
@@ -30,7 +30,7 @@
 .google_button {
     background-color: black;
     color: white;
-    padding: 0.7vw 4vw;
+    padding: 1vw 6vw;
     cursor: pointer;
     font-size: 0.8vw;
     text-align: center;
@@ -66,5 +66,52 @@
 .text4 {
     font-size: 0.7vw;
     text-align: left;
+    padding-bottom: 3%;
+    padding-top: 7%;
+}
 
+.text4::after {
+    content: "*";
+    color: red;
+    padding-left: 0.2vw;
+}
+
+.email_box {
+    border: 1px solid rgb(128, 128, 128, .3);
+    background: transparent;
+    border-radius: 15px;
+    width: 17vw;
+    height: 6vh;
+    font-size: 1vw;
+    text-indent: 0.7vw;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+.password_box {
+    border: 1px solid rgb(128, 128, 128, .3);
+    background: transparent;
+    border-radius: 15px;
+    width: 17vw;
+    height: 6vh;
+    font-size: 1vw;
+    text-indent: 0.7vw;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+.submit_div{
+    padding-top: 7%;
+}
+
+.submit_button {
+    background: blue;
+    border-radius: 15px;
+    width: 100%;
+    height: 6vh;
+    font: 1.1rem;
+    color: white;
+    font-weight: 500;
+    opacity: 0.7;
+    cursor: pointer;
 }
