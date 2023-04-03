@@ -146,14 +146,20 @@
 }
 
 .CopyRight {
+    display: flex;
+    flex-direction: row;    
+}
+
+.CopyRight_List{
     font-size: 0.1rem;
     color: gray;
     font-weight: 500;
     padding-right: 0.5vw;
+    cursor: pointer;
 }
 
 .GTH_Details {
-    padding-top: 5%;
+    padding-top: 10%;
 }
 
 
