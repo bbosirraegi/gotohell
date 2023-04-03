@@ -1,41 +1,74 @@
 import { useState } from "react";
-import { auth, googleProvider } from "../config/firebase";
 import {
+  GoogleAuthProvider,
   createUserWithEmailAndPassword,
+  getAuth,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
   signInWithPopup,
   signOut,
 } from "firebase/auth";
 import "../css/loginpage.css";
+import { authService, googleProvider } from "../../fbase";
+import { useNavigate } from "react-router-dom";
 
 export const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+  const handleEnter = (e) =>{
+    if (e.key === "Enter"){
+      handleSubmit();
+    }
+  }
+
+  const auth = getAuth();
+  const signUp = async () => {
+    try {
+      await createUserWithEmailAndPassword(authService, email, password).then(
+        (userCredential) => {
+          const user = userCredential.user;
+          return user;
+        }
+      );
+    } catch (err) {
+      alert(err);
+    }
+  };
 
   const signIn = async () => {
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      await signInWithEmailAndPassword(auth, email, password).then(
+        (userCredential) => {
+          const user = userCredential.user;
+          navigate("/");
+          return user;
+        }
+      );
     } catch (err) {
-      console.error(err);
+      alert(err);
     }
   };
 
   const signInwithGoogle = async () => {
     try {
-      await signInWithPopup(auth, googleProvider);
+      await signInWithPopup(authService, googleProvider).then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const user = result.user;
+        navigate("/");
+        return user, token;
+      });
+      console.log(authService);
     } catch (err) {
       console.error(err);
     }
   };
 
-  const logout = async () => {
-    try {
-      await signOut(auth);
-    } catch (err) {
-      console.error(err);
-    }
-  };
+
 
   return (
+    
     <div className="login_main">
       <div>
         <h1>GoToHell</h1>
@@ -77,6 +110,7 @@ export const LoginPage = () => {
             type="password"
             placeholder="비밀번호"
             onChange={(e) => setPassword(e.target.value)}
+            onKeyDown={handleEnter}
           />
         </div>
 
@@ -86,8 +120,7 @@ export const LoginPage = () => {
           </button>
         </div>
 
-        <div className="login_div">
-        </div>
+        <div className="login_div"></div>
       </div>
     </div>
   );
