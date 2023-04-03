@@ -1,13 +1,26 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { auth, googleProvider } from "../../config/firebase";
+import { getAuth, onAuthStateChanged } from "firebase/auth";
+
 import HomeIcon from "@mui/icons-material/Home";
 import InsertCommentIcon from "@mui/icons-material/InsertComment";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import ControlPointIcon from "@mui/icons-material/ControlPoint";
+import RemoveSharpIcon from "@mui/icons-material/RemoveSharp";
+import AccountCircleSharpIcon from "@mui/icons-material/AccountCircleSharp";
 
 const Header = () => {
-
-  const [ checkpage, setCheckpage ] = useState( 0 );
+  const [checkpage, setCheckpage] = useState(0);
+  const auth = getAuth();
+  const user = auth.currentUser;
+  if (user != null) {
+    const displayname = user.displayName;
+    const email = user.email;
+    const photoURL = user.photoURL;
+    const emailVerified = user.emailVerified;
+    const uid = user.uid;
+  }
 
   return (
     <div className="mainlayout-navi-box">
@@ -25,14 +38,24 @@ const Header = () => {
           <InsertCommentIcon />
           <span className="mainlayout-navi-text">토픽</span>
         </Link>
-        <Link to="/signin" className="mainlayout-navi-link">
+        <Link to="/login" className="mainlayout-navi-link">
           <NotificationsIcon />
           <span className="mainlayout-navi-text">알림</span>
         </Link>
-        <Link to="/signup" className="mainlayout-navi-link">
+
+        <div className="mainlayout-navi-horizen">
+          <RemoveSharpIcon />
+        </div>
+
+        <Link to="/login" className="mainlayout-navi-link">
           <ControlPointIcon />
           <span className="mainlayout-navi-text">글쓰기</span>
         </Link>
+      </div>
+      <div className="mainlayout-navi-login">
+        <div className="mainlayout-navi-profile">
+          <AccountCircleSharpIcon fontSize="large" className="mainlayout-navi-profile-icon"/>
+        </div>
       </div>
     </div>
   );

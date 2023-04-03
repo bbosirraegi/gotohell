@@ -7,11 +7,9 @@ import { HashRouter as Router } from 'react-router-dom';
 import LoadingManager from './utils/LoadingManager';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
     <Router>
       <LoadingManager>
         <App />
       </LoadingManager>
     </Router>
-  </React.StrictMode>
 );

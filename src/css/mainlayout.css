@@ -108,3 +108,35 @@ a {
     position: relative;
     bottom: 10%;
 }
+
+.mainlayout-navi-horizen {
+    width: 100%;
+    padding-bottom: 10%;
+}
+
+.mainlayout-navi-login{
+   width: 100%;
+   padding-top: 60%;
+   padding-left: 30%;
+}
+
+.mainlayout-navi-profile{
+    position: relative;
+    width: 2vw;
+    height: 2vw;
+    border-radius: 50%;
+   border: 1px solid white;
+   overflow: hidden;
+}
+
+.mainlayout-navi-profile-icon{
+    font-size: large;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2vw;
+    height: 2vw;
+    object-fit: cover;
+    color: gray;
+    cursor: pointer;
+}
