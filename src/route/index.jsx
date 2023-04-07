@@ -6,6 +6,7 @@ import Service_Information from "../components/BestTopic/Copyright/Service_Infro
 import Terms_Page from "../components/BestTopic/Copyright/Terms_Page";
 import { About, Main } from "./pages";
 import LoginPage from "components/LoginPage";
+import SignupPage from "components/SignupPage";
 
 const IndexRouter = () => {
   return (
@@ -19,6 +20,7 @@ const IndexRouter = () => {
         <Route path="/Service_Information" element={<Service_Information />} />
         <Route path="/Terms_Page" element={<Terms_Page />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/SignupPage" element={<SignupPage />} />
       </Route>
     </Routes>
   );

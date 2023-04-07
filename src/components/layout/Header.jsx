@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { authService } from "../../../fbase";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import "../../css/SignupPage.css"
 
 import HomeIcon from "@mui/icons-material/Home";
 import InsertCommentIcon from "@mui/icons-material/InsertComment";
@@ -27,17 +28,19 @@ const Header = () => {
   };
 
   useEffect(() => {
-    if (user != null) {
-      const displayname = user.displayName;
-      const email = user.email;
-      const photoURL = user.photoURL;
-      const emailVerified = user.emailVerified;
-      const uid = user.uid;
-      setIsLoggedIn(true);
-    } else {
-      setIsLoggedIn(false);
-      user === null;
-    }
+    onAuthStateChanged(authService, (user) => {
+      if (user != null) {
+        const displayname = user.displayName;
+        const email = user.email;
+        const photoURL = user.photoURL;
+        const emailVerified = user.emailVerified;
+        const uid = user.uid;
+        setIsLoggedIn(true);
+        console.log(displayname, email, photoURL, uid);
+      } else {
+        setIsLoggedIn(false);
+      }
+    });
   });
 
   return (
@@ -82,11 +85,13 @@ const Header = () => {
                     src={user.photoURL}
                   />
                 </div>
+                <div>{user.displayName}님 반가워요!!!</div>
+
                 <div onClick={() => logout()}>LogOut</div>
               </>
             ) : (
               <>
-                {user.email.slice(0, 3)}
+                {user.displayName}
                 <div onClick={() => logout()}>LogOut</div>
               </>
             )

@@ -3,14 +3,12 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
   getAuth,
-  onAuthStateChanged,
   signInWithEmailAndPassword,
   signInWithPopup,
-  signOut,
 } from "firebase/auth";
 import "../css/loginpage.css";
 import { authService, googleProvider } from "../../fbase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -28,7 +26,6 @@ export const LoginPage = () => {
       await createUserWithEmailAndPassword(authService, email, password).then(
         (userCredential) => {
           const user = userCredential.user;
-          return user;
         }
       );
     } catch (err) {
@@ -41,9 +38,8 @@ export const LoginPage = () => {
       await signInWithEmailAndPassword(auth, email, password).then(
         (userCredential) => {
           const user = userCredential.user;
-          console.log(auth)
+          console.log(auth);
           navigate("/");
-          return user;
         }
       );
     } catch (err) {
@@ -58,7 +54,6 @@ export const LoginPage = () => {
         const token = credential.accessToken;
         const user = result.user;
         navigate("/");
-        return user, token;
       });
       console.log(authService);
     } catch (err) {
@@ -118,7 +113,14 @@ export const LoginPage = () => {
           </button>
         </div>
 
-        <div className="login_div"></div>
+        <div className="array_account">
+          <Link path="/">
+            <div>아이디 및 비밀번호 찾기</div>
+          </Link>
+          <Link to="/SignupPage">
+            <div>신규 회원가입</div>
+          </Link>
+        </div>
       </div>
     </div>
   );
