@@ -1,0 +1,114 @@
+.sign_main {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30%;
+    width: 100%;
+}
+.sign_title{
+    align-items: center;
+    margin: auto;
+}
+.sign_form{
+    display: flex;
+    flex-direction: column;
+
+}
+.sign_hi {
+    font-weight: bold;
+    font-size: 1.3vw;
+    padding-bottom: 5%;
+    align-items: start;
+}
+
+.sign_email_text{
+    font-size: 0.7vw;
+    padding-bottom: 3%;
+}
+
+.sign_email_text::after{
+    content: "*";
+    color: red;
+    padding-left: 0.2vw;
+}
+
+.sign_email_box {
+    border: 1px solid rgb(128, 128, 128, .3);
+    background: transparent;
+    border-radius: 15px;
+    width: 17vw;
+    height: 6vh;
+    font-size: 1vw;
+    text-indent: 0.7vw;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+.sign_password_text{
+    font-size: 0.7vw;
+    padding-bottom: 3%;
+}
+
+.sign_password_text::after{
+    content: "*";
+    color: red;
+    padding-left: 0.2vw;
+}
+
+.sign_password_box {
+    border: 1px solid rgb(128, 128, 128, .3);
+    background: transparent;
+    border-radius: 15px;
+    width: 17vw;
+    height: 6vh;
+    font-size: 1vw;
+    text-indent: 0.7vw;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+.sign_name_text{
+    font-size: 0.7vw;
+    padding-bottom: 3%;
+}
+
+.sign_name_text::after{
+    content: "*";
+    color: red;
+    padding-left: 0.2vw;
+}
+
+.sign_name_box {
+    border: 1px solid rgb(128, 128, 128, .3);
+    background: transparent;
+    border-radius: 15px;
+    width: 17vw;
+    height: 6vh;
+    font-size: 1vw;
+    text-indent: 0.7vw;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+.sign_img_text{
+    font-size: 0.7vw;
+    padding-bottom: 3%;
+}
+
+.sign_img_text::after{
+    content: "*";
+    color: red;
+    padding-left: 0.2vw;
+}
+
+
+.sign_submit_button{
+    background: blue;
+    border-radius: 15px;
+    width: 100%;
+    height: 6vh;
+    font: 1.1rem;
+    color: white;
+    opacity: 0.7;
+    cursor: pointer;
+    font-size: 0.9vw;
+}

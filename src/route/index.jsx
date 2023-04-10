@@ -7,6 +7,7 @@ import Terms_Page from "../components/BestTopic/Copyright/Terms_Page";
 import { About, Main } from "./pages";
 import LoginPage from "components/LoginPage";
 import SignupPage from "components/SignupPage";
+import NoticePage from "components/NoticePage";
 
 const IndexRouter = () => {
   return (
@@ -21,6 +22,7 @@ const IndexRouter = () => {
         <Route path="/Terms_Page" element={<Terms_Page />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/SignupPage" element={<SignupPage />} />
+        <Route path="/notice" element={<NoticePage/>}/>
       </Route>
     </Routes>
   );

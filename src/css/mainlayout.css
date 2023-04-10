@@ -103,7 +103,7 @@ a {
     height: 10%;
 }
 
-.mainlayout-navi-text{
+.mainlayout-navi-text {
     padding-left: 1vw;
     position: relative;
     bottom: 10%;
@@ -114,28 +114,44 @@ a {
     padding-bottom: 10%;
 }
 
-.mainlayout-navi-login{
-   width: 100%;
-   padding-top: 60%;
-   padding-left: 30%;
+.mainlayout-navi-login {
+    width: 100%;
+    padding-top: 60%;
+    padding-left: 30%;
 }
 
-.mainlayout-navi-profile{
+.mainlayout-navi-profile {
     position: relative;
-    width: 2vw;
-    height: 2vw;
+    width: 4vw;
+    height: 4vw;
     border-radius: 50%;
-   border: 1px solid white;
-   overflow: hidden;
+    border: 1px solid white;
+    overflow: hidden;
 }
 
-.mainlayout-navi-profile-icon{
+.mainlayout-navi-profile-icon {
     font-size: large;
     position: absolute;
     top: 0;
     left: 0;
-    width: 2vw;
-    height: 2vw;
+    width: 4vw;
+    height: 4vw;
+    object-fit: cover;
+    color: gray;
+    cursor: pointer;
+}
+
+.mainlayout-navi-profileiconbox {
+    position: relative;
+}
+
+.main-navi-profile-profileicon {
+    font-size: large;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1vw;
+    height: 1vw;
     object-fit: cover;
     color: gray;
     cursor: pointer;
